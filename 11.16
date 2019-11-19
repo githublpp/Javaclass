@@ -1,26 +1,31 @@
 import java.util.ArrayList;
-		import java.util.Random;
-		import java.util.Scanner;
+import java.util.Scanner;
 
-package RepeatAdditionQuiz;
+public class Addition
+{
+    public static void main(String [] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int number1 = (int)(Math.random() * 9 + 1);
+        int number2 = (int)(Math.random() * 9 + 1);
 
-public class RepeatAdditionQuiz {
+        System.out.print("What is " + number1 + " + " + number2 + "? ");
+        int answer = input.nextInt();
+        ArrayList<Integer> answerList = new ArrayList<>();
+        while (answer != (number1 + number2))
+        {
+            if (answerList.contains(answer))
+            {
+                System.out.println("You already enter " + answer);
+            }
+            else
+                answerList.add(answer);
 
-		public static void main(String[] args) {
-			Random rand = new Random();
-		    int number1 = rand.nextInt(10);
-		    int number2 = rand.nextInt(10);
-		    Scanner input = new Scanner(System.in);
-		    System.out.println("what is " + number1 +"+" + number2 +"?");
-		    ArrayList<Integer> answer = new ArrayList<>();
-		    answer.add(input.nextInt());
-		    while(!answer.contains(number1 + number2)) {
-		        System.out.println("wrong answer.try again. what is " + number1 + "+" + number2 +"?");
-		        answer.add(input.nextInt());
-		    }
-		    System.out.println("you got it !");
-		}
-		
-	}
+            System.out.print("Wrong answer. Try again. What is " +
+                number1 + " + " + number2 + "? "); 
+            answer = input.nextInt();
+        }
 
-
+        System.out.println("You got it.");
+    }
+}
