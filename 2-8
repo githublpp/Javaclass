@@ -1,0 +1,13 @@
+package ShowCurrentTime;
+
+public class ShowCurrentTime {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long totalMilliseconds=System.currentTimeMinllis();
+		System.out.println(totallMinllisecond);
+		long totallMillisecond=totalMilliseconde；
+
+	}
+
+}
